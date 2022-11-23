@@ -4,9 +4,19 @@ public class Reina {
     private Color color;
     private Posicion posicion;
 
-    Reina(){
+    // CONSTRUCTOR
+    public Reina(){
         this.color = Color.BLANCO;
         this.posicion= new Posicion(1, 'd');
+    }
+
+    Reina(Color color){
+        this.setColor(color);
+        if (Color.NEGRO == color){
+            this.setPosicion(new Posicion(8, 'b'));
+        } else {
+            this.setPosicion(new Posicion(1, 'd'));
+        }
     }
 
     // COLOR

@@ -13,8 +13,8 @@ public class Posicion {
     }
 
    Posicion(Posicion i){
-        this.setColumna(i.columna);
-        this.setFila(i.fila);
+        this.setColumna(i.getColumna());
+        this.setFila(i.getFila());
     }
 
 
