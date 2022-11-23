@@ -4,7 +4,7 @@ public enum Color {
     BLANCO("Blanco"),
     NEGRO("Negro");
 
-    public final String cadenaAMostrar;
+    public String cadenaAMostrar;
 
     Color(String cadenaAMostrar) {
         this.cadenaAMostrar = cadenaAMostrar;
