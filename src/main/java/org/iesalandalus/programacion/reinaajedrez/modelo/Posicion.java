@@ -8,13 +8,17 @@ public class Posicion {
 
     // CONSTRUCTOR
     public Posicion(int fila, char columna){
-        this.setColumna(columna);
         this.setFila(fila);
+        this.setColumna(columna);
     }
 
    Posicion(Posicion i){
+        if(i != null){
         this.setColumna(i.getColumna());
         this.setFila(i.getFila());
+        } else {
+          throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
+        }
     }
 
 
@@ -27,7 +31,7 @@ public class Posicion {
         if (columna >= 'a' && columna <= 'h'){
             this.columna = columna;
         } else {
-            throw new IllegalArgumentException("La columna devuelta no es la esperada.");
+            throw new IllegalArgumentException("ERROR: Columna no válida.");
         }
     }
 
@@ -40,7 +44,7 @@ public class Posicion {
         if (fila >= 1 && fila <= 8){
             this.fila = fila;
         }else{
-            throw new IllegalArgumentException("La fila devuelta no es la esperada.");
+            throw new IllegalArgumentException("ERROR: Fila no válida.");
         }
     }
 
@@ -59,6 +63,6 @@ public class Posicion {
 
     @Override
     public String toString() {
-        return "(fila="+fila+", columna="+columna+')';
+        return "fila="+fila+", columna="+columna;
     }
 }
