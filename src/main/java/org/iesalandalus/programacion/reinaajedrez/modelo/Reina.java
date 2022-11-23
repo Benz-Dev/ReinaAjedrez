@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reinaajedrez.modelo;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Reina {
     private Color color;
     private Posicion posicion;
@@ -44,5 +46,20 @@ public class Reina {
             throw e;
         }
 
+    }
+
+    public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException {
+        if (pasos >= 1 && pasos <= 7){
+            if(direccion != null){
+               int positionActual = posicion.getFila() + pasos;
+               if (positionActual > 8){
+                   throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
+               }
+            }else {
+                throw new NullPointerException("ERROR: La dirección no puede ser nula.");
+            }
+        } else {
+            throw new IllegalArgumentException("ERROR: El número de pasos debe estar comprendido entre 1 y 7.");
+        }
     }
 }
