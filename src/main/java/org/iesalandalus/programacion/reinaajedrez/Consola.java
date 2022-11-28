@@ -21,5 +21,15 @@ public class Consola {
         }while(opcion < 1 || opcion > 4);
         return opcion;
     }
-    public
+    public Color elegirOpcion() {
+        int opcion = 0;
+        do{
+            System.out.println("Elige una opción: ");
+            System.out.println("1. Crear una reina blanca.");
+            System.out.println("2. Crear una reina negra.");
+            opcion = Entrada.entero();
+        }while(opcion == 1 || opcion == 2);
+
+        return opcion==1?Color.BLANCO:Color.NEGRO;
+    }
 }
