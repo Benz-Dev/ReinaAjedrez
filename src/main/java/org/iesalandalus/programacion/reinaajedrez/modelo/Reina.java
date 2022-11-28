@@ -12,7 +12,7 @@ public class Reina {
         this.posicion= new Posicion(1, 'd');
     }
 
-    Reina(Color color){
+    public Reina(Color color){
         if(color != null) {
             this.setColor(color);
             if (Color.NEGRO == color) {
