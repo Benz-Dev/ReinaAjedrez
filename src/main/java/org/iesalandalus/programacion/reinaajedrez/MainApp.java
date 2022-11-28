@@ -10,7 +10,9 @@ import javax.naming.OperationNotSupportedException;
 public class MainApp {
 	private Reina reina;
 	public static void main(String[] args) {
-		System.out.println("hola");
+		Consola console = new Consola();
+		console.mostarMenu();
+		console.elegirOpcionMenu();
 	}
 	public void ejecutarOpcion(int opcion) {
 		// No entiendo que tengo que poner aqui 😅
